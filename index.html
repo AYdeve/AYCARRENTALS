@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AY Car Rentals – Drive in Style</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="logo" onclick="showPage('home')">
+    <div class="logo-mark">AY</div>
+    <div class="logo-text">
+      <span class="logo-name">AY Car Rentals</span>
+      <span class="logo-sub">Drive in Style · Est. 2020</span>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a onclick="showPage('home')" class="active" id="nav-home">Home</a></li>
+    <li><a onclick="showPage('fleet')" id="nav-fleet">Our Fleet</a></li>
+    <li><a onclick="showPage('booking')" id="nav-booking">Book a Car</a></li>
+    <li><a onclick="showPage('about')" id="nav-about">About Us</a></li>
+    <li><a onclick="showPage('contact')" id="nav-contact">Contact</a></li>
+    <li><a onclick="showPage('booking')" class="nav-book-btn">Book Now →</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a onclick="showPage('home');toggleMenu()">Home</a>
+  <a onclick="showPage('fleet');toggleMenu()">Our Fleet</a>
+  <a onclick="showPage('booking');toggleMenu()">Book a Car</a>
+  <a onclick="showPage('about');toggleMenu()">About Us</a>
+  <a onclick="showPage('contact');toggleMenu()">Contact</a>
+</div>
+
+<!-- ══════════════════ HOME PAGE ══════════════════ -->
+<div id="page-home" class="page active">
+
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">Now Available · Lagos & Akure</div>
+      <h1 class="hero-title">
+        <span class="italic">Your Journey,</span>
+        Your
+        <span class="accent">Rules.</span>
+      </h1>
+      <p class="hero-sub">From budget rides to luxury cruisers — AY Car Rentals puts you in the driver's seat with zero stress, transparent pricing, and vehicles you'll love.</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="showPage('booking')">Book a Car Now →</button>
+        <button class="btn-white" onclick="showPage('fleet')">View Our Fleet</button>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num">50+</div>
+          <div class="stat-label">Vehicles</div>
+        </div>
+        <div>
+          <div class="stat-num">2K+</div>
+          <div class="stat-label">Happy Customers</div>
+        </div>
+        <div>
+          <div class="stat-num">4.9★</div>
+          <div class="stat-label">Average Rating</div>
+        </div>
+        <div>
+          <div class="stat-num">24/7</div>
+          <div class="stat-label">Support</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK BOOKING STRIP -->
+  <div class="container">
+    <div class="quick-book">
+      <div class="qb-group">
+        <label class="qb-label">Car Type</label>
+        <select class="qb-select">
+          <option>Any Vehicle</option>
+          <option>Economy</option>
+          <option>SUV / 4x4</option>
+          <option>Luxury / Executive</option>
+          <option>Minivan / Family</option>
+        </select>
+      </div>
+      <div class="qb-group">
+        <label class="qb-label">Pick-Up Date</label>
+        <input type="date" class="qb-input" id="quick-pickup">
+      </div>
+      <div class="qb-group">
+        <label class="qb-label">Return Date</label>
+        <input type="date" class="qb-input" id="quick-return">
+      </div>
+      <button class="btn-primary" onclick="quickSearch()">Search Cars →</button>
+    </div>
+  </div>
+
+  <!-- WHY AY -->
+  <section class="why-us">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-img-stack">
+          <div class="why-accent-bar"></div>
+          <img class="why-img-main" src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&q=80" alt="Car rental">
+          <img class="why-img-small" src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=500&q=80" alt="Luxury car">
+        </div>
+        <div>
+          <div class="section-tag">Why Choose Us</div>
+          <h2 class="section-title">Driving You <span>Forward</span></h2>
+          <p class="section-desc">AY Car Rentals was built on one promise — to give every customer a seamless, enjoyable rental experience, every single time.</p>
+          <div class="features-list">
+            <div class="feature-row">
+              <div>
+                <div class="feat-title">Diverse Fleet</div>
+                <p class="feat-desc">From pocket-friendly economy cars to head-turning luxury rides — we have the perfect car for every occasion and budget.</p>
+              </div>
+            </div>
+            <div class="feature-row">
+              <div>
+                <div class="feat-title">Transparent Pricing</div>
+                <p class="feat-desc">No hidden fees. No surprises. What you see is what you pay — always.</p>
+              </div>
+            </div>
+            <div class="feature-row">
+              <div>
+                <div class="feat-title">Flexible Pickup</div>
+                <p class="feat-desc">Pick up from our office or choose home/hotel delivery. We come to you.</p>
+              </div>
+            </div>
+            <div class="feature-row">
+              <div>
+                <div class="feat-title">Fully Insured Vehicles</div>
+                <p class="feat-desc">Every car in our fleet is fully insured and regularly serviced for your safety and peace of mind.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED CARS (3) -->
+  <section style="padding:80px 0; background:var(--off-white)">
+    <div class="container">
+      <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1rem; margin-bottom:3rem">
+        <div>
+          <div class="section-tag">Top Picks</div>
+          <h2 class="section-title">Featured <span>Vehicles</span></h2>
+        </div>
+        <button class="btn-outline" onclick="showPage('fleet')">View Full Fleet →</button>
+      </div>
+      <div class="fleet-grid" style="padding:0">
+        <div class="car-card">
+          <div class="car-img">
+            <img src="https://images.unsplash.com/photo-1550355291-bbee04a92027?w=700&q=80" alt="Economy Car">
+            <span class="car-category">Economy</span>
+          </div>
+          <div class="car-body">
+            <div class="car-name">Toyota Corolla</div>
+            <div class="car-model">2022 · Automatic · Petrol</div>
+            <div class="car-specs">
+              <div class="spec-item">5 Seats</div>
+              <div class="spec-item">A/C</div>
+              <div class="spec-item">Bluetooth</div>
+              <div class="spec-item">Fuel Efficient</div>
+            </div>
+            <div class="car-footer">
+              <div class="car-price">
+                <div class="from">From</div>
+                <span class="amount">₦18,000</span>
+                <span class="per">/day</span>
+              </div>
+              <button class="btn-rent" onclick="showPage('booking')">Rent Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="car-card">
+          <div class="car-img">
+            <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=700&q=80" alt="SUV">
+            <span class="car-category">SUV</span>
+          </div>
+          <div class="car-body">
+            <div class="car-name">Toyota Prado</div>
+            <div class="car-model">2023 · Automatic · Diesel</div>
+            <div class="car-specs">
+              <div class="spec-item">7 Seats</div>
+              <div class="spec-item">A/C</div>
+              <div class="spec-item">4WD</div>
+              <div class="spec-item">Sound System</div>
+            </div>
+            <div class="car-footer">
+              <div class="car-price">
+                <div class="from">From</div>
+                <span class="amount">₦45,000</span>
+                <span class="per">/day</span>
+              </div>
+              <button class="btn-rent" onclick="showPage('booking')">Rent Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="car-card">
+          <div class="car-img">
+            <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?w=700&q=80" alt="Luxury Car">
+            <span class="car-category">Luxury</span>
+          </div>
+          <div class="car-body">
+            <div class="car-name">Mercedes E-Class</div>
+            <div class="car-model">2023 · Automatic · Petrol</div>
+            <div class="car-specs">
+              <div class="spec-item">5 Seats</div>
+              <div class="spec-item">Leather</div>
+              <div class="spec-item">WiFi</div>
+              <div class="spec-item">Premium Audio</div>
+            </div>
+            <div class="car-footer">
+              <div class="car-price">
+                <div class="from">From</div>
+                <span class="amount">₦85,000</span>
+                <span class="per">/day</span>
+              </div>
+              <button class="btn-rent" onclick="showPage('booking')">Rent Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMO -->
+  <section class="promo-banner">
+    <div class="container">
+      <div class="promo-inner">
+        <div class="promo-text">
+          <h2>Get <span>20% Off</span> Your First Rental!</h2>
+          <p>Use code <strong style="color:var(--accent)">AYRIDE20</strong> at checkout. Valid for new customers only.</p>
+        </div>
+        <button class="btn-primary" onclick="showPage('booking')">Claim Offer →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section style="padding:90px 0; background:var(--white)">
+    <div class="container">
+      <div class="section-tag">What Customers Say</div>
+      <h2 class="section-title">Real <span>Reviews</span></h2>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1.8rem; margin-top:3rem">
+        <div style="background:var(--off-white); padding:2rem; border-left:4px solid var(--accent)">
+          <div style="color:var(--accent); font-size:1.3rem; margin-bottom:1rem">★★★★★</div>
+          <p style="font-size:1rem; line-height:1.8; font-style:italic; color:var(--text-body); margin-bottom:1.2rem">"AY Car Rentals made my business trip so smooth. The Corolla was clean, full tank, and delivered to my hotel. 10/10!"</p>
+          <div style="font-family:'Barlow Condensed',sans-serif; font-weight:900; color:var(--blue-dark); font-size:1rem; letter-spacing:1px; text-transform:uppercase">Tunde Fashola</div>
+          <div style="font-family:'Space Mono',monospace; font-size:9px; color:var(--accent); letter-spacing:2px">Lagos, Nigeria</div>
+        </div>
+        <div style="background:var(--off-white); padding:2rem; border-left:4px solid var(--blue-mid)">
+          <div style="color:var(--accent); font-size:1.3rem; margin-bottom:1rem">★★★★★</div>
+          <p style="font-size:1rem; line-height:1.8; font-style:italic; color:var(--text-body); margin-bottom:1.2rem">"Rented the Prado for a family trip to Abuja. Spacious, clean, and the customer service was excellent throughout."</p>
+          <div style="font-family:'Barlow Condensed',sans-serif; font-weight:900; color:var(--blue-dark); font-size:1rem; letter-spacing:1px; text-transform:uppercase">Adaeze Okonkwo</div>
+          <div style="font-family:'Space Mono',monospace; font-size:9px; color:var(--accent); letter-spacing:2px">Abuja, Nigeria</div>
+        </div>
+        <div style="background:var(--off-white); padding:2rem; border-left:4px solid var(--accent)">
+          <div style="color:var(--accent); font-size:1.3rem; margin-bottom:1rem">★★★★★</div>
+          <p style="font-size:1rem; line-height:1.8; font-style:italic; color:var(--text-body); margin-bottom:1.2rem">"The Mercedes E-Class was immaculate. Arrived at the airport in style for my client meeting. Will definitely book again!"</p>
+          <div style="font-family:'Barlow Condensed',sans-serif; font-weight:900; color:var(--blue-dark); font-size:1rem; letter-spacing:1px; text-transform:uppercase">Emeka Chukwu</div>
+          <div style="font-family:'Space Mono',monospace; font-size:9px; color:var(--accent); letter-spacing:2px">Port Harcourt, Nigeria</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="logo" style="cursor:default">
+            <div class="logo-mark">AY</div>
+            <div class="logo-text">
+              <span class="logo-name">AY Car Rentals</span>
+              <span class="logo-sub">Drive in Style</span>
+            </div>
+          </div>
+          <p class="footer-desc">Your trusted car rental partner in Nigeria. Affordable, reliable, and always on time. We put you in control.</p>
+          <div class="footer-socials">
+            <a class="soc-btn" href="#">f</a>
+            <a class="soc-btn" href="#">ig</a>
+            <a class="soc-btn" href="#">tw</a>
+            <a class="soc-btn" href="#">wa</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <div class="footer-links">
+            <a onclick="showPage('home')">Home</a>
+            <a onclick="showPage('fleet')">Our Fleet</a>
+            <a onclick="showPage('booking')">Book a Car</a>
+            <a onclick="showPage('about')">About Us</a>
+            <a onclick="showPage('contact')">Contact</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Fleet</h4>
+          <div class="footer-links">
+            <a onclick="showPage('fleet')">Economy Cars</a>
+            <a onclick="showPage('fleet')">SUVs & 4x4</a>
+            <a onclick="showPage('fleet')">Luxury Cars</a>
+            <a onclick="showPage('fleet')">Minivans</a>
+            <a onclick="showPage('fleet')">Pickup Trucks</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="footer-links">
+            <a href="#">📍 Lagos & Akure, Nigeria</a>
+            <a href="#">📞 +234 800 000 0000</a>
+            <a href="#">✉️ info@aycarrentals.com</a>
+            <a href="#">🕐 24/7 Support</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2025 <span>AY Car Rentals</span>. All Rights Reserved.</p>
+        <p class="footer-copy">Built with ❤️ for <span>Ayomide</span></p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════════ FLEET PAGE ══════════════════ -->
+<div id="page-fleet" class="page">
+  <div class="fleet-hero">
+    <div class="container">
+      <div class="section-tag">Our Vehicles</div>
+      <h2 class="section-title" style="color:var(--white)">The Full <span style="color:var(--accent)">Fleet</span></h2>
+      <p class="section-desc" style="color:rgba(255,255,255,0.65)">50+ vehicles across every category. Filter by type and find your perfect ride.</p>
+      <div class="fleet-filters">
+        <button class="filter-btn active" onclick="filterCars('all',this)">All Vehicles</button>
+        <button class="filter-btn" onclick="filterCars('economy',this)">Economy</button>
+        <button class="filter-btn" onclick="filterCars('suv',this)">SUV / 4x4</button>
+        <button class="filter-btn" onclick="filterCars('luxury',this)">Luxury</button>
+        <button class="filter-btn" onclick="filterCars('minivan',this)">Minivan</button>
+        <button class="filter-btn" onclick="filterCars('pickup',this)">Pickup</button>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="fleet-grid" id="fleet-grid">
+      <!-- Economy -->
+      <div class="car-card" data-cat="economy">
+        <div class="car-img"><img src="https://images.unsplash.com/photo-1550355291-bbee04a92027?w=700&q=80" alt="Corolla"><span class="car-category">Economy</span></div>
+        <div class="car-body">
+          <div class="car-name">Toyota Corolla</div><div class="car-model">2022 · Automatic · Petrol</div>
+          <div class="car-specs"><div class="spec-item">5 Seats</div><div class="spec-item">A/C</div><div class="spec-item">Bluetooth</div><div class="spec-item">Fuel Efficient</div></div>
+          <div class="car-footer"><div class="car-price"><div class="from">From</div><span class="amount">₦18,000</span><span class="per">/day</span></div><button class="btn-rent" onclick="showPage('booking')">Rent Now</button></div>
+        </div>
+      </div>
+      <div class="car-card" data-cat="economy">
+        <div class="car-img"><img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=700&q=80" alt="Camry"><span class="car-category">Economy</span></div>
+        <div class="car-body">
+          <div class="car-name">Toyota Camry</div><div class="car-model">2022 · Automatic · Petrol</div>
+          <div class="car-specs"><div class="spec-item">5 Seats</div><div class="spec-item">A/C</div><div class="spec-item">Insured</div><div class="spec-item">Radio</div></div>
+          <div class="car-footer"><div class="car-price"><div class="from">From</div><span class="amount">₦22,000</span><span class="per">/day</span></div><button class="btn-rent" onclick="showPage('booking')">Rent Now</button></div>
+        </div>
+      </div>
+      <div class="car-card" data-cat="economy">
+        <div class="car-img"><img src="https://images.unsplash.com/photo-1541443131876-44b03de101c5?w=700&q=80" alt="Honda Accord"><span class="car-category">Economy</span></div>
+        <div class="car-body">
+          <div class="car-name">Honda Accord</div><div class="car-model">2021 · Automatic · Petrol</div>
+          <div class="car-specs"><div class="spec-item">5 Seats</div><div class="spec-item">A/C</div><div class="spec-item">Keyless</div><div class="spec-item">Economy</div></div>
+          <div class="car-footer"><div class="car-price"><div class="from">From</div><span class="amount">₦20,000</span><span class="per">/day</span></div><button class="btn-rent" onclick="showPage('booking')">Rent Now</button></div>
+        </div>
+      </div>
+      <!-- SUV -->
+      <div class="car-card" data-cat="suv">
+        <div class="car-img"><img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=700&q=80" alt="Prado"><span class="car-category">SUV</span></div>
+        <div class="car-body">
+          <div class="car-name">Toyota Prado</div><div class="car-model">2023 · Automatic · Diesel</div>
+          <div class="car-specs"><div class="spec-item">7 Seats</div><div class="spec-item">A/C</div><div class="spec-item">4WD</div><div class="spec-item">Sound System</div></div>
+          <div class="car-footer"><div class="car-price"><div class="from">From</div><span class="amount">₦45,000</span><span class="per">/day</span></div><button class="btn-rent" onclick="showPage('booking')">Rent Now</button></div>
+        </div>
+      </div>
+      <div class="car-card" data-cat="suv">
+        <div class="car-img"><img src="https://images.unsplash.com/photo-1534093607318-f025413f49cb?w=700&q=80" alt="Highlander"><span class="car-category">SUV</span></div>
+        <div class="car-body">
+          <div class="car-name">Toyota Highlander</div><div class="car-model">2023 · Automatic · Petrol</div>
+          <div class="car-specs"><div class="spec-item">7 Seats</div><div class="spec-item">Dual A/C</div><div class="spec-item">AWD</div><div class="spec-item">Apple CarPlay</div></div>
+          <div class="car-footer"><div class="car-price"><div class="from">From</div><span class="amount">₦55,000</span><span class="per">/day</span></div><button class="btn-rent" onclick="showPage('booking')">Rent Now</button></div>
+        </div>
+      </div>
+      <div class="car-card" data-cat="suv">
+        <div class="car-img"><img src="https://images.unsplash.com/photo-1498887960847-2a5e46312788?w=700&q=80" alt="Jeep"><span class="car-category">SUV</span></div>
+        <div class="car-body">
+          <div class="car-name">Jeep Wrangler</div><div class="car-model">2022 · Manual · Petrol</div>
+          <div class="car-specs"><div class="spec-item">5 Seats</div><div class="spec-item">4x4</div><div class="spec-item">A/C</div><div class="spec-item">Off-Road</div></div>
+          <div class="car-footer"><div class="car-price"><div class="from">From</div><span class="amount">₦50,000</span><span class="per">/day</span></div><button class="btn-rent" onclick="showPage('booking')">Rent Now</button></div>
+        </div>
+      </div>
+      <!-- Luxury -->
+      <div class="car-card" data-cat="luxury">
+        <div class="car-img"><img src="https://images.unsplash.com/photo-1563720223185-11003d516935?w=700&q=80" alt="Mercedes"><span class="car-category">Luxury</span></div>
+        <div class="car-body">
+          <div class="car-name">Mercedes E-Class</div><div class="car-model">2023 · Automatic · Petrol</div>
+          <div class="car-specs"><div class="spec-item">5 Seats</div><div class="spec-item">Leather</div><div class="spec-item">WiFi</div><div class="spec-item">Burmester</div></div>
+          <div class="car-footer"><div class="car-price"><div class="from">From</div><span class="amount">₦85,000</span><span class="per">/day</span></div><button class="btn-rent" onclick="showPage('booking')">Rent Now</button></div>
+        </div>
+      </div>
+      <div class="car-card" data-cat="luxury">
+        <div class="car-img"><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=700&q=80" alt="BMW"><span class="car-category">Luxury</span></div>
+        <div class="car-body">
+          <div class="car-name">BMW 5 Series</div><div class="car-model">2023 · Automatic · Petrol</div>
+          <div class="car-specs"><div class="spec-item">5 Seats</div><div class="spec-item">M Sport</div><div class="spec-item">iDrive</div><div class="spec-item">Harman</div></div>
+          <div class="car-footer"><div class="car-price"><div class="from">From</div><span class="amount">₦90,000</span><span class="per">/day</span></div><button class="btn-rent" onclick="showPage('booking')">Rent Now</button></div>
+        </div>
+      </div>
+      <div class="car-card" data-cat="luxury">
+        <div class="car-img"><img src="https://images.unsplash.com/photo-1542362567-b07e54358753?w=700&q=80" alt="Lexus"><span class="car-category">Luxury</span></div>
+        <div class="car-body">
+          <div class="car-name">Lexus LS 500</div><div class="car-model">2022 · Automatic · Hybrid</div>
+          <div class="car-specs"><div class="spec-item">5 Seats</div><div class="spec-item">Massage Seats</div><div class="spec-item">WiFi</div><div class="spec-item">Mark Levinson</div></div>
+          <div class="car-footer"><div class="car-price"><div class="from">From</div><span class="amount">₦110,000</span><span class="per">/day</span></div><button class="btn-rent" onclick="showPage('booking')">Rent Now</button></div>
+        </div>
+      </div>
+      <!-- Minivan -->
+      <div class="car-card" data-cat="minivan">
+        <div class="car-img"><img src="https://images.unsplash.com/photo-1506015391300-4802dc74f1e4?w=700&q=80" alt="Sienna"><span class="car-category">Minivan</span></div>
+        <div class="car-body">
+          <div class="car-name">Toyota Sienna</div><div class="car-model">2022 · Automatic · Hybrid</div>
+          <div class="car-specs"><div class="spec-item">8 Seats</div><div class="spec-item">Tri-Zone A/C</div><div class="spec-item">DVD Screen</div><div class="spec-item">Large Boot</div></div>
+          <div class="car-footer"><div class="car-price"><div class="from">From</div><span class="amount">₦60,000</span><span class="per">/day</span></div><button class="btn-rent" onclick="showPage('booking')">Rent Now</button></div>
+        </div>
+      </div>
+      <!-- Pickup -->
+      <div class="car-card" data-cat="pickup">
+        <div class="car-img"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80" alt="Hilux"><span class="car-category">Pickup</span></div>
+        <div class="car-body">
+          <div class="car-name">Toyota Hilux</div><div class="car-model">2023 · Manual · Diesel</div>
+          <div class="car-specs"><div class="spec-item">5 Seats</div><div class="spec-item">4WD</div><div class="spec-item">1T Payload</div><div class="spec-item">Rugged</div></div>
+          <div class="car-footer"><div class="car-price"><div class="from">From</div><span class="amount">₦40,000</span><span class="per">/day</span></div><button class="btn-rent" onclick="showPage('booking')">Rent Now</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer style="background:var(--blue-dark); padding:30px 0; border-top:1px solid rgba(255,255,255,0.1)">
+    <div class="container"><div class="footer-bottom"><p class="footer-copy">© 2025 <span>AY Car Rentals</span>. All Rights Reserved.</p><button class="btn-primary" style="font-size:12px;padding:10px 24px" onclick="showPage('booking')">Book Now →</button></div></div>
+  </footer>
+</div>
+
+<!-- ══════════════════ BOOKING PAGE ══════════════════ -->
+<div id="page-booking" class="page">
+  <div class="booking-hero">
+    <div class="container">
+      <div class="section-tag">Reserve Your Ride</div>
+      <h2 class="section-title" style="color:var(--white)">Book a <span style="color:var(--accent)">Car</span></h2>
+      <p class="section-desc" style="color:rgba(255,255,255,0.65)">Fill in your details below and we'll confirm your booking within 30 minutes.</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="booking-layout">
+      <div>
+        <div class="booking-form-wrap">
+          <h3>📋 Booking Details</h3>
+          <div class="form-section-title">Vehicle Selection</div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Car Category</label>
+              <select onchange="updatePrice(this)">
+                <option value="0">Select Category</option>
+                <option value="18000">Economy Car – from ₦18,000/day</option>
+                <option value="45000">SUV / 4x4 – from ₦45,000/day</option>
+                <option value="85000">Luxury Car – from ₦85,000/day</option>
+                <option value="60000">Minivan – from ₦60,000/day</option>
+                <option value="40000">Pickup Truck – from ₦40,000/day</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Preferred Model</label>
+              <select>
+                <option>No Preference</option>
+                <option>Toyota Corolla</option>
+                <option>Toyota Camry</option>
+                <option>Toyota Prado</option>
+                <option>Toyota Highlander</option>
+                <option>Mercedes E-Class</option>
+                <option>BMW 5 Series</option>
+                <option>Lexus LS 500</option>
+                <option>Toyota Sienna</option>
+                <option>Toyota Hilux</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-section-title">Rental Period</div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Pick-Up Date</label>
+              <input type="date" id="book-pickup" onchange="calcDays()">
+            </div>
+            <div class="form-group">
+              <label>Return Date</label>
+              <input type="date" id="book-return" onchange="calcDays()">
+            </div>
+            <div class="form-group">
+              <label>Pick-Up Time</label>
+              <select>
+                <option>08:00 AM</option><option>09:00 AM</option><option>10:00 AM</option>
+                <option>11:00 AM</option><option>12:00 PM</option><option>01:00 PM</option>
+                <option>02:00 PM</option><option>03:00 PM</option><option>04:00 PM</option>
+                <option>05:00 PM</option><option>06:00 PM</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Pickup Location</label>
+              <select>
+                <option>AY Office – Lagos</option>
+                <option>AY Office – Akure</option>
+                <option>Hotel / Home Delivery (+₦5,000)</option>
+                <option>Airport Pickup (+₦8,000)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-section-title">Personal Information</div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" placeholder="Ayomide">
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" placeholder="Last Name">
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" placeholder="+234 800 000 0000">
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" placeholder="you@email.com">
+            </div>
+            <div class="form-group full">
+              <label>Driver's Licence Number</label>
+              <input type="text" placeholder="Licence number (required for rental)">
+            </div>
+            <div class="form-group full">
+              <label>Special Requests (Optional)</label>
+              <textarea placeholder="Child seat, GPS, chauffeur, etc."></textarea>
+            </div>
+          </div>
+          <div style="margin-top:1.5rem; display:flex; gap:1rem; align-items:center; flex-wrap:wrap">
+            <button class="btn-primary" onclick="submitBooking()" style="font-size:14px">Confirm Booking →</button>
+            <span style="font-size:0.85rem; color:var(--text-body)">🔒 Your info is secure & private</span>
+          </div>
+        </div>
+      </div>
+      <div class="booking-sidebar">
+        <div class="sidebar-card">
+          <h4>💰 Price Summary</h4>
+          <div class="price-breakdown">
+            <div class="price-row"><span>Daily Rate</span><span id="daily-rate">₦0</span></div>
+            <div class="price-row"><span>No. of Days</span><span id="num-days">0</span></div>
+            <div class="price-row"><span>Insurance</span><span>Included ✓</span></div>
+            <div class="price-row"><span>VAT (7.5%)</span><span id="vat-amt">₦0</span></div>
+            <div class="price-row total"><span>Total Est.</span><span id="total-price">₦0</span></div>
+          </div>
+        </div>
+        <div class="sidebar-card">
+          <h4>📋 Rental Policy</h4>
+          <div class="policy-list">
+            <div class="policy-item"><span>Valid driver's licence required</span></div>
+            <div class="policy-item"><span>Minimum rental: 1 day</span></div>
+            <div class="policy-item"><span>Full tank provided at pickup</span></div>
+            <div class="policy-item"><span>Return with same fuel level</span></div>
+            <div class="policy-item"><span>Damage report on collection</span></div>
+            <div class="policy-item"><span>Free cancellation 24hrs before</span></div>
+            <div class="policy-item"><span>50% deposit to confirm booking</span></div>
+          </div>
+        </div>
+        <div class="sidebar-card" style="background:var(--blue-dark); border-left-color:var(--accent)">
+          <h4 style="color:var(--white)">📞 Need Help?</h4>
+          <p style="font-size:0.9rem; color:rgba(255,255,255,0.65); line-height:1.7; margin-bottom:1rem">Our team is available 24/7 to assist with your booking.</p>
+          <p style="font-family:'Barlow Condensed',sans-serif; font-size:1.4rem; font-weight:900; color:var(--accent)">+234 916 035 5175</p>
+          <p style="font-size:0.85rem; color:rgba(255,255,255,0.5); margin-top:4px">info@aycarrentals.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ ABOUT PAGE ══════════════════ -->
+<div id="page-about" class="page">
+  <div class="about-hero">
+    <div class="container">
+      <div class="section-tag">Our Story</div>
+      <h2 class="section-title" style="color:var(--white)">About <span style="color:var(--accent)">AY Car Rentals</span></h2>
+      <p class="section-desc" style="color:rgba(255,255,255,0.65)">Born from a passion for great service and a love for the open road.</p>
+    </div>
+  </div>
+  <section class="about-story">
+    <div class="container">
+      <div class="about-layout">
+        <img class="about-img-main" src="https://images.unsplash.com/photo-1506015391300-4802dc74f1e4?w=800&q=80" alt="AY Car Rentals">
+        <div>
+          <div class="section-tag">Who We Are</div>
+          <h2 class="section-title">Driven by <span>Excellence</span></h2>
+          <p class="section-desc">AY Car Rentals was founded in 2020 with a simple but powerful mission — to make car rental in Nigeria easy, affordable, and reliable for everyone.</p>
+          <p style="margin-top:1rem; font-size:1.05rem; line-height:1.85; color:var(--text-body)">What started as a small fleet of 5 cars in Akure has grown into a nationwide service with over 50 vehicles across Lagos and Akure. We serve business travellers, families, event planners, and everyday Nigerians who need a dependable ride.</p>
+          <p style="margin-top:1rem; font-size:1.05rem; line-height:1.85; color:var(--text-body)">Every vehicle in our fleet is regularly inspected, fully insured, and cleaned before each rental. We don't just rent cars — we give you peace of mind on the road.</p>
+          <div style="margin-top:2rem; display:flex; gap:1rem; flex-wrap:wrap">
+            <button class="btn-primary" onclick="showPage('booking')">Book a Car →</button>
+            <button class="btn-outline" onclick="showPage('contact')">Contact Us</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-box"><div class="stat-big">50+</div><div class="stat-lbl">Vehicles in Fleet</div></div>
+        <div class="stat-box"><div class="stat-big">2K+</div><div class="stat-lbl">Happy Customers</div></div>
+        <div class="stat-box"><div class="stat-big">5</div><div class="stat-lbl">Years Experience</div></div>
+        <div class="stat-box"><div class="stat-big">4.9★</div><div class="stat-lbl">Avg. Customer Rating</div></div>
+      </div>
+    </div>
+  </div>
+  <section class="about-values">
+    <div class="container">
+      <div class="section-tag">Our Values</div>
+      <h2 class="section-title">What We <span>Stand For</span></h2>
+      <div class="values-grid">
+        <div class="value-card"><div class="value-title">Quality</div><p class="value-desc">Only well-maintained, road-worthy vehicles make it into our fleet — no exceptions.</p></div>
+        <div class="value-card"><div class="value-title">Transparency</div><p class="value-desc">No hidden charges. Our pricing is clear, honest, and always customer-first.</p></div>
+        <div class="value-card"><div class="value-title">Speed</div><p class="value-desc">From booking confirmation to vehicle delivery — we move fast so you can too.</p></div>
+        <div class="value-card"><div class="value-title">Trust</div><p class="value-desc">Built on years of reliable service and thousands of happy customers across Nigeria.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="team-section">
+    <div class="container">
+      <div class="section-tag">The Team</div>
+      <h2 class="section-title">Meet the <span>People Behind AY</span></h2>
+      <div class="team-grid">
+        <div class="team-card">
+          <img class="team-img" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=80" alt="CEO">
+          <div class="team-name">Ayomide Oladele</div>
+          <div class="team-role">Founder & CEO</div>
+          <p class="team-bio">The visionary behind AY Car Rentals. Passionate about building a world-class rental brand rooted in Nigerian excellence.</p>
+        </div>
+        <div class="team-card">
+          <img class="team-img" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&q=80" alt="Operations">
+          <div class="team-name">Kemi Adeyemi</div>
+          <div class="team-role">Head of Operations</div>
+          <p class="team-bio">Ensures every booking runs like clockwork — from vehicle prep to customer handover.</p>
+        </div>
+        <div class="team-card">
+          <img class="team-img" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300&q=80" alt="Fleet Manager">
+          <div class="team-name">Emeka Eze</div>
+          <div class="team-role">Fleet Manager</div>
+          <p class="team-bio">Keeps every vehicle in perfect condition. 10+ years of automotive expertise.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer style="background:var(--blue-dark); padding:30px 0; border-top:1px solid rgba(255,255,255,0.1)">
+    <div class="container"><div class="footer-bottom"><p class="footer-copy">© 2025 <span>AY Car Rentals</span>. All Rights Reserved.</p><button class="btn-primary" style="font-size:12px;padding:10px 24px" onclick="showPage('booking')">Book Now →</button></div></div>
+  </footer>
+</div>
+
+<!-- ══════════════════ CONTACT PAGE ══════════════════ -->
+<div id="page-contact" class="page">
+  <div class="contact-hero">
+    <div class="container">
+      <div class="section-tag">Get in Touch</div>
+      <h2 class="section-title" style="color:var(--white)">Contact <span style="color:var(--accent)">Us</span></h2>
+      <p class="section-desc" style="color:rgba(255,255,255,0.65)">We're here 24/7. Reach out by phone, email, or fill in the form below.</p>
+    </div>
+  </div>
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-layout">
+        <div>
+          <div class="contact-info-cards">
+            <div class="ci-card"><div><div class="ci-label">Office Address</div><div class="ci-val">12 Drive Avenue, Victoria Island<br>Lagos, Nigeria<br><br>4 Rental Road, Oke-Aro<br>Akure, Ondo State</div></div></div>
+            <div class="ci-card"><div><div class="ci-label">Phone Numbers</div><div class="ci-val">+234 903 544 3233<br>+234 916 035 5175 (WhatsApp)</div></div></div>
+            <div class="ci-card"><div><div class="ci-label">Email</div><div class="ci-val">info@aycarrentals.com<br>bookings@aycarrentals.com</div></div></div>
+            <div class="ci-card"><div><div class="ci-label">Opening Hours</div><div class="ci-val">Mon – Sat: 7:00 AM – 9:00 PM<br>Sunday: 9:00 AM – 6:00 PM<br>Emergency Line: 24/7</div></div></div>
+          </div>
+          <div style="margin-top:1.5rem; background:var(--blue-dark); height:200px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden">
+            <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.3" alt="Map">
+            <div style="position:relative; text-align:center; color:var(--white); font-family:'Barlow Condensed',sans-serif; font-size:1rem; letter-spacing:2px">📍 AY Car Rentals<br><span style="font-family:'Space Mono',monospace;font-size:9px;color:var(--accent);letter-spacing:1px">Lagos & Akure, Nigeria</span></div>
+          </div>
+        </div>
+        <div class="contact-form-wrap">
+          <h3>Send Us a Message</h3>
+          <div class="contact-form">
+            <div class="cf-row">
+              <div class="form-group"><label>First Name</label><input type="text" placeholder="Ayomide"></div>
+              <div class="form-group"><label>Last Name</label><input type="text" placeholder="Last name"></div>
+            </div>
+            <div class="cf-row">
+              <div class="form-group"><label>Phone</label><input type="tel" placeholder="+234 916 035 5175"></div>
+              <div class="form-group"><label>Email</label><input type="email" placeholder="ayomidejohnson733@gmail.com"></div>
+            </div>
+            <div class="form-group"><label>Subject</label>
+              <select>
+                <option>General Enquiry</option>
+                <option>Booking Assistance</option>
+                <option>Vehicle Availability</option>
+                <option>Complaint / Feedback</option>
+                <option>Partnership / Corporate</option>
+              </select>
+            </div>
+            <div class="form-group"><label>Message</label><textarea placeholder="How can we help you?" style="height:130px;resize:vertical"></textarea></div>
+            <button class="btn-primary" onclick="submitContact()" style="font-size:13px;width:fit-content">Send Message →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer style="background:var(--blue-dark); padding:30px 0; border-top:1px solid rgba(255,255,255,0.1)">
+    <div class="container"><div class="footer-bottom"><p class="footer-copy">© 2025 <span>AY Car Rentals</span>. All Rights Reserved.</p><button class="btn-primary" style="font-size:12px;padding:10px 24px" onclick="showPage('booking')">Book Now →</button></div></div>
+  </footer>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+<div id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+<script src="index.js"></script>
+
+</body>
+</html>
